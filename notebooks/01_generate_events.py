@@ -4,9 +4,9 @@ from datetime import datetime, timedelta
 
 np.random.seed(42)
 
-# ----------------------------
+
 # Config
-# ----------------------------
+
 N_USERS = 3000
 DAYS = 60
 N_EVENTS = 90000  # adjust up/down
@@ -39,9 +39,9 @@ feature_map = {
     "logout": "auth"
 }
 
-# ----------------------------
+
 # Users table (dimension)
-# ----------------------------
+
 users = pd.DataFrame({
     "user_id": np.arange(1, N_USERS + 1),
 })
@@ -61,9 +61,9 @@ users["country"] = np.random.choice(countries, size=N_USERS, p=country_probs)
 
 users["platform_pref"] = np.random.choice(platforms, size=N_USERS, p=[0.55, 0.45])
 
-# ----------------------------
+
 # Generate sessions per user (behavior)
-# ----------------------------
+
 # Heavy-tail: most users few sessions, few users lots
 sessions_per_user = np.random.negative_binomial(n=2, p=0.55, size=N_USERS) + 1
 sessions_per_user = np.clip(sessions_per_user, 1, 25)
@@ -101,9 +101,9 @@ sessions = pd.DataFrame(session_rows)
 # Keep only a reasonable number of sessions to match event volume
 sessions = sessions.sample(min(len(sessions), 22000), random_state=42).reset_index(drop=True)
 
-# ----------------------------
+
 # Generate events within sessions
-# ----------------------------
+
 events = []
 event_id_counter = 1
 
@@ -174,9 +174,9 @@ events["signup_time"] = events["user_id"].map(signup_time_lookup)
 events["is_new_user"] = (events["event_time"] <= (events["signup_time"] + pd.Timedelta(days=7))).astype(int)
 events.drop(columns=["signup_time"], inplace=True)
 
-# ----------------------------
+
 # Save raw data
-# ----------------------------
+
 events.to_csv("data/raw_events.csv", index=False)
 users.to_csv("data/users.csv", index=False)
 sessions.to_csv("data/sessions.csv", index=False)
