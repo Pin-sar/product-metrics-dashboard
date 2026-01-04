@@ -14,31 +14,32 @@ The dataset and metrics are inspired by collaborative design and productivity to
 ---
 
 ## Repository Structure
-
 product-metrics-dashboard/
 │
 ├── data/
-│ ├── raw_events.csv # Synthetic event-level logs
-│ ├── users.csv # User dimension table
-│ └── sessions.csv # Session-level metadata
+│   ├── raw_events.csv
+│   ├── users.csv
+│   └── sessions.csv
 │
 ├── outputs/
-│ ├── clean_events.csv # Cleaned & validated events
-│ ├── daily_dau.csv # Daily Active Users
-│ ├── daily_feature_users.csv # Feature-level unique users (daily)
-│ ├── sessions_per_user_day.csv # Engagement depth metrics
-│ └── events_per_session.csv
+│   ├── clean_events.csv
+│   ├── daily_dau.csv
+│   ├── daily_feature_users.csv
+│   ├── sessions_per_user_day.csv
+│   └── events_per_session.csv
 │
 ├── notebooks/
-│ ├── 01_generate_events.py # Synthetic data generation
-│ ├── 02_clean_events.py # Data cleaning & validation
-│ ├── 03_build_metrics.py # Metric construction
-│ └── 04_quick_charts.py # Sanity-check visualizations
+│   ├── 01_generate_events.py
+│   ├── 02_clean_events.py
+│   ├── 03_build_metrics.py
+│   └── 04_quick_charts.py
 │
-├── screenshots/ # Power BI dashboard screenshots
+├── screenshots/
+│   ├── dashboard_overview.png
+│   └── dau_feature_zoom.png
+│
 ├── .gitignore
 └── README.md
-
 
 ---
 
