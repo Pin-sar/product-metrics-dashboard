@@ -124,32 +124,32 @@ python notebooks/04_quick_charts.py
 
 The generated CSVs in outputs/ can be loaded directly into Power BI Desktop to recreate the dashboard.
 
-Why This Project Is Relevant
+---
+
+## Why This Project Is Relevant
 
 This project reflects how product analytics teams:
-
-Transform raw event logs into decision-ready metrics
-
-Avoid common aggregation pitfalls
-
-Design dashboards that support real product discussions
-
-Balance technical rigor with stakeholder communication
+- Transform raw event logs into decision-ready metrics
+- Avoid common aggregation pitfalls
+- Design dashboards that support real product discussions
+- Balance technical rigor with stakeholder communication
 
 It closely mirrors analytics work performed in product, growth, and platform teams at large technology companies.
 
-Extensions & Future Work
+---
 
-Funnel analysis (onboarding → activation → retention)
+## Extensions & Future Work
 
-Cohort-based retention analysis
+- Funnel analysis (onboarding → activation → retention)
+- Cohort-based retention analysis
+- A/B experiment simulation and metric evaluation
+- Behavioral segmentation of power vs casual users
 
-A/B experiment simulation and metric evaluation
+---
 
-Behavioral segmentation of power vs casual users
-
-Note
+## Note
 
 All data in this repository is synthetic and generated solely for demonstration and learning purposes.
 
+---
 
